@@ -1,0 +1,9 @@
+{
+  "name": "profit",
+  "version": "0.1.0",
+  "description": "Herramienta de presupuestación de proyectos.",
+  "author": {
+    "name": "Gerardo Marote"
+  },
+  "keywords": ["obra", "cimentaciones", "geotecnica", "presupuesto"]
+}
