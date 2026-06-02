@@ -1,0 +1,25 @@
+{
+  "zona_geografica": ["Andorra", "Baleares", "Canarias", "Gibraltar", "Península", "Portugal"],
+  "turnos_por_semana": [5, 6, 7, 8, 9, 10, 11, 12, 13],
+  "horas_por_turno": [8, 9, 10, 11, 12, 13, 14],
+  "precio_gasoleo_defecto": 1.5,
+  "abrasividad": ["Alta", "Media", "Baja"],
+  "euribor": "consultar_hoy",
+  "tecnologias": [
+    { "descripcion": "Anclajes (temporales y permanentes)",                      "codigo": "ANC" },
+    { "descripcion": "Drenes / Drenes mecha",                                    "codigo": "DRA" },
+    { "descripcion": "Muros pantalla y pantallas impermeables con cuchara",      "codigo": "DWG" },
+    { "descripcion": "Muros pantalla y pantallas impermeables con hidrofresa",   "codigo": "DWH" },
+    { "descripcion": "Técnicas Geopier",                                         "codigo": "GPI" },
+    { "descripcion": "Inyecciones (todas las técnicas)",                         "codigo": "GRO" },
+    { "descripcion": "Jet grouting",                                             "codigo": "JGR" },
+    { "descripcion": "Pilotes perforados a rotación / Pilotes Benoto",           "codigo": "PBO" },
+    { "descripcion": "Pilotes prefabricados de hormigón o acero",                "codigo": "PDR" },
+    { "descripcion": "Micropilotes",                                             "codigo": "PMI" },
+    { "descripcion": "Materiales",                                               "codigo": "MAT" },
+    { "descripcion": "Subcontratas",                                             "codigo": "SUB" },
+    { "descripcion": "Otros",                                                    "codigo": "OTR" }
+  ],
+  "tipo_dieta": ["Completa", "Media"],
+  "unidad_coste": ["€/Ud", "€/mes", "€/turno", "€/hora", "€ (total)", "€/m", "€/m2", "€/m3", "€/T", "€/Kg", "€/l"]
+}
