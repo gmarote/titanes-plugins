@@ -33,26 +33,18 @@ Pregunta en orden. Muestra las opciones cuando el campo tiene lista restringida.
 
 ### Bloque 2 — Tecnologías (SelectTecnologias) — Tipo A
 
-Muestra el catálogo del JSON (`tecnologias`) y pide que el usuario indique cuáles aplican (normalmente 1–3).
-
-Para cada tecnología seleccionada recoge:
-- Unidad de Medida (libre)
-- Consumibles Coste Unitario
-- Consumibles Ud. de Coste → mostrar JSON `campos.unidad_coste` si duda
-- Ingeniería €/proyecto
+Muestra el catálogo del JSON (`tecnologias`) y pide que el usuario indique cuáles aplican.
+El usuario solo tiene que seleccionar la tecnología, no hace falta que rellene ningún campo más de esta tabla.
 
 ---
 
 ### Bloque 3 — Personal (SelectPersonal) — Tipo A
 
 Muestra el catálogo del JSON (`personal`) y pregunta qué categorías intervienen.
-
+El usuario debe seleccionar todas las categorías que intervienen en el proyecto.
 Para cada categoría seleccionada recoge:
-- Código Tecnología (de las seleccionadas en Bloque 2)
+- Código Tecnología (de las seleccionadas en Bloque 2).
 - Tipo de Dieta: ver JSON `campos.tipo_dieta` — solo preguntar si hay desplazamiento; defecto "Completa"
-- Coste Mensual €/mes
-- Dietas €/mes
-- Coste Horas Extra €/mes
 
 ---
 
@@ -63,15 +55,12 @@ El usuario puede escribir nombre parcial o pedir la lista completa (JSON: `equip
 Para cada equipo:
 - Descripción (nombre confirmado)
 - Código Tecnología
-- Coste Unitario
-- Unidad de Coste → mostrar JSON `campos.unidad_coste` si duda
-- Plazo de Pago (días)
 
 ---
 
 ### Bloque 5 — Capex (SelectCapex) — Tipo C
 
-Pregunta si hay inversiones Capex. Para cada una: descripción y coste total en €.
+Pregunta si hay inversiones Capex. Para cada una: descripción y coste de la inversión en € (que será Coste Unitario en la tabla).
 Si no hay ninguna, se dejan vacías las filas.
 
 ---
@@ -80,7 +69,7 @@ Si no hay ninguna, se dejan vacías las filas.
 
 Muestra el catálogo del JSON (`equipos_alquilados_habituales`) y pregunta cuáles aplican.
 
-Para cada uno que aplique recoge: Código Tecnología, Coste Unitario, Unidad de Coste, Plazo de Pago.
+Para cada uno que aplique recoge el Código Tecnología.
 Los que no apliquen se borran.
 
 ---
@@ -88,7 +77,7 @@ Los que no apliquen se borran.
 ### Bloque 7 — Equipos alquilados (SelectEquiposAlquilados) — Tipo B
 
 Pregunta si hay equipos en alquiler no habituales. Para cada uno:
-- Descripción, Código Tecnología, Coste Mensual €/mes, Consumo Gasoil l/turno, Plazo de Pago.
+- Descripción, Código Tecnología, Coste Mensual €/mes, Consumo Gasoil l/turno.
 
 Si no hay ninguno → se borran todas las filas menos la primera.
 
@@ -97,47 +86,48 @@ Si no hay ninguno → se borran todas las filas menos la primera.
 ### Bloque 8 — Consumibles (SelectConsumibles) — Tipo B
 
 ¿Hay consumibles específicos además de los de tecnología? Para cada uno:
-- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste, Plazo de Pago.
+- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste.
 
 ---
 
 ### Bloque 9 — Materiales habituales (SelectMaterialesHabituales) — Tipo A
 
 Muestra el catálogo del JSON (`materiales_habituales`) y pregunta cuáles aplican.
-Para cada uno: Código Tecnología, Coste Unitario, Unidad de Coste, Plazo de Pago.
+Para cada uno: Código Tecnología.
 
 ---
 
 ### Bloque 10 — Materiales no habituales (SelectMateriales) — Tipo B
 
 ¿Hay otros materiales fuera del catálogo? Para cada uno:
-- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste, Plazo de Pago.
+- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste.
 
 ---
 
 ### Bloque 11 — Subcontratas (SelectSubcontratos) — Tipo B
 
 ¿Hay subcontratas? Para cada una:
-- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste, Plazo de Pago.
+- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste.
 
 ---
 
 ### Bloque 12 — Otros alquileres (SelectOtrosAlquileres) — Tipo B
 
-¿Hay alquileres que no sean equipos (andamios, bombas, etc.)? Mismos campos que equipos alquilados.
-
+¿Hay alquileres distintos de los habituales?
+- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste.
+- 
 ---
 
 ### Bloque 13 — Servicios (SelectServicios) — Tipo B
 
 ¿Hay servicios externos (topografía, laboratorio, vigilancia...)? Para cada uno:
-- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste, Plazo de Pago.
+- Descripción, Código Tecnología, Coste Unitario, Unidad de Coste.
 
 ---
 
 ### Bloque 14 — Transportes (SelectTransportes) — Tipo C
 
-¿Hay costes de transporte? Para cada partida: descripción y coste total en €.
+¿Hay costes de transporte? Para cada partida: descripción e importe del transporte.
 
 ---
 
@@ -149,16 +139,14 @@ Para cada uno: Código Tecnología, Coste Unitario, Unidad de Coste, Plazo de Pa
 
 ### Bloque 16 — Alquileres habituales (SelectAlquileresHabituales) — Tipo D
 
-Estructura fija, no se borran filas. Preguntar coste, unidad y plazo para:
-- Oficina y vestuarios
-- Vehículos
+No se pregunta nada, es fijo.
 
 ---
 
 ### Bloque 17 — Seguros (SelectSeguros) — Tipo D
 
 Ver JSON `tablas.tipo_D.SelectSeguros` para filas y campos a rellenar.
-Para cada seguro preguntar % sobre producción o coste total €.
+Para cada seguro preguntar % sobre producción.
 
 ---
 
