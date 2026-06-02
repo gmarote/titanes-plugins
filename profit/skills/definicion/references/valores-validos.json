@@ -1,7 +1,7 @@
 {
   "campos": {
     "zona_geografica": ["Andorra", "Baleares", "Canarias", "Gibraltar", "Península", "Portugal"],
-    "turnos_por_semana": [5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "turnos_por_semana": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
     "horas_por_turno": [8, 9, 10, 11, 12, 13, 14],
     "precio_gasoleo_defecto": 1.5,
     "abrasividad": ["Alta", "Media", "Baja"],
@@ -24,8 +24,8 @@
     { "descripcion": "Otros",                                                  "codigo": "OTR" }
   ],
   "personal": [
-    "Jefe de obra", "Encargado", "Oficial 1ª", "Oficial 2ª",
-    "Ayudante", "Gruista", "Oficial Mecánico", "Peón"
+    "Director de proyecto", "Jefe de obra", "Encargado", "Maquinista",
+    "Oficial 1ª", "Oficial 2ª", "Ayudante"
   ],
   "equipos_propios": [
     "BAUER MC-64 # 273", "AKERMAN H 16D # 1335 Nº 87", "AKERMAN H 16D #1020 Nº 86",
@@ -59,45 +59,38 @@
   ],
   "tablas": {
     "tipo_A": {
-      "descripcion": "El usuario elige elementos. Se borran los no seleccionados, conservando cabecera + fila 1.",
+      "descripcion": "El usuario elige elementos. El usuario selecciona elementos, ningún campo más. Se borran los no seleccionados, conservando cabecera + fila 1 borrando valores.",
       "tablas": [
         "SelectTecnologias", "SelectPersonal", "SelectEquiposPropios",
-        "SelectEquiposAlquilados", "SelectConsumibles", "SelectMaterialesHabituales",
-        "SelectMateriales", "SelectSubcontratos", "SelectOtrosAlquileres", "SelectServicios"
+        "SelectEquiposAlquiladosHabituales", "SelectMaterialesHabituales"        
       ]
     },
-    "tipo_A_habituales": {
-      "descripcion": "Lista predefinida. El usuario confirma cuáles aplican, se borran los demás (conservando cabecera + fila 1).",
-      "tablas": ["SelectEquiposAlquiladosHabituales"]
+    "tipo_B": {
+      "descripcion": "Sin elementos. El usuario indica, para cada elemento; Descripción, Código Tecnología, Coste Unitario y Unidad de Medida.",
+      "tablas": ["SelectEquiposAlquilados", "SelectConsumibles", "SelectMateriales", "SelectSubcontratos", "SelectOtrosAlquileres",
+      "SelectServicios"
+      ]
     },
     "tipo_C": {
-      "descripcion": "Unidad siempre € (total). Solo se pregunta el importe de cada elemento.",
+      "descripcion": "Sin elementos. El usuario indica, para cada elemento: Descripción, Código Tecnología y Coste Unitario. Unidad de Medida siempre € (total).",
       "tablas": ["SelectCapex", "SelectTransportes", "SelectImpuestos"]
     },
-    "tipo_B": {
-      "descripcion": "Estructura fija, no se borran filas. Solo se rellenan los campos amarillos.",
-      "tablas": {
-        "SelectAlquileresHabituales": {
-          "campos_amarillos": ["Coste Unitario", "Unidad de Coste", "Plazo de Pago (días)"],
-          "filas": ["Oficina y vestuarios", "Vehículos"]
-        },
+    "tipo_D": {
+      "descripcion": "Estructura fija, no se borran filas. Solo se rellenan los campos_indicados.",
+      "tablas": {        
         "SelectSeguros": {
-          "campos_amarillos": ["% Producción", "Coste Total €"],
+          "campos_indicados": ["% Producción"],
           "filas": [
-            "Seguro de responsabilidad civil y maquinaria",
-            "Seguro de crédito (impago)",
             "Seguro transporte",
             "Otros seguros"
           ]
         },
         "SelectOtros": {
-          "campos_amarillos": ["% Producción"],
+          "campos_indicados": ["% Producción"],
           "filas": [
             { "nombre": "Gastos comerciales",       "defecto": 0.01 },
             { "nombre": "Seguridad y Calidad",       "defecto": 0.01 },
             { "nombre": "Imprevistos",               "defecto": null },
-            { "nombre": "Ingeniería",                "calculado": true },
-            { "nombre": "Coste confirming",          "calculado": true }
           ]
         }
       }
