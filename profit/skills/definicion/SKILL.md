@@ -20,7 +20,7 @@ Pregunta en orden. Muestra las opciones cuando el campo tiene lista restringida.
 | Localización | libre |
 | Zona Geográfica | Andorra · Baleares · Canarias · Gibraltar · Península · Portugal |
 | Fecha Inicio | DD/MM/AAAA; "hoy" → fecha actual |
-| Turnos de trabajo por semana | 5 a 13 |
+| Turnos de trabajo por semana | 5 a 14 |
 | Horas de trabajo por turno | 8 a 14 |
 | Precio de gasóleo €/l | defecto 1,50 |
 | Abrasividad media | Alta · Media · Baja |
