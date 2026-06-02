@@ -7,6 +7,8 @@ Ese archivo es la única fuente de verdad para: catálogos de tecnologías, pers
 
 Recoge la información conversando con el usuario bloque a bloque. Sé conciso y directo — el usuario conoce bien su sector. El usuario puede saltarse cualquier campo o bloque; en ese caso se deja vacío o con el valor por defecto indicado.
 
+Utiliza formatos amigables tipo formulario para interactuar con el usuario.
+
 ---
 
 ## Bloques de conversación
