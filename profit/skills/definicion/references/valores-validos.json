@@ -1,0 +1,106 @@
+{
+  "campos": {
+    "zona_geografica": ["Andorra", "Baleares", "Canarias", "Gibraltar", "Península", "Portugal"],
+    "turnos_por_semana": [5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "horas_por_turno": [8, 9, 10, 11, 12, 13, 14],
+    "precio_gasoleo_defecto": 1.5,
+    "abrasividad": ["Alta", "Media", "Baja"],
+    "tipo_dieta": ["Completa", "Media"],
+    "unidad_coste": ["€/Ud", "€/mes", "€/turno", "€/hora", "€/m", "€/m2", "€/m3", "€/T", "€/Kg", "€/l", "€ (total)"]
+  },
+  "tecnologias": [
+    { "descripcion": "Anclajes (temporales y permanentes)",                    "codigo": "ANC" },
+    { "descripcion": "Drenes / Drenes mecha",                                  "codigo": "DRA" },
+    { "descripcion": "Muros pantalla y pantallas impermeables con cuchara",    "codigo": "DWG" },
+    { "descripcion": "Muros pantalla y pantallas impermeables con hidrofresa", "codigo": "DWH" },
+    { "descripcion": "Técnicas Geopier",                                       "codigo": "GPI" },
+    { "descripcion": "Inyecciones (todas las técnicas)",                       "codigo": "GRO" },
+    { "descripcion": "Jet grouting",                                           "codigo": "JGR" },
+    { "descripcion": "Pilotes perforados a rotación / Pilotes Benoto",         "codigo": "PBO" },
+    { "descripcion": "Pilotes prefabricados de hormigón o acero",              "codigo": "PDR" },
+    { "descripcion": "Micropilotes",                                           "codigo": "PMI" },
+    { "descripcion": "Materiales",                                             "codigo": "MAT" },
+    { "descripcion": "Subcontratas",                                           "codigo": "SUB" },
+    { "descripcion": "Otros",                                                  "codigo": "OTR" }
+  ],
+  "personal": [
+    "Jefe de obra", "Encargado", "Oficial 1ª", "Oficial 2ª",
+    "Ayudante", "Gruista", "Oficial Mecánico", "Peón"
+  ],
+  "equipos_propios": [
+    "BAUER MC-64 # 273", "AKERMAN H 16D # 1335 Nº 87", "AKERMAN H 16D #1020 Nº 86",
+    "BAUER BG 28 #3770", "BAUER BG 28 #6060", "BAUER BG 33 # 5830", "BAUER BG 33 # 5834",
+    "BAUER BG 36 # 2085", "BAUER RG 19 T # 115", "CATERPILLAR CAT 365C # 456",
+    "COMACCHIO MC 1200 # 1913", "COMACCHIO MC 1500 # 1341", "COMACCHIO MC 400 # 2070",
+    "COMACCHIO MC 4D # 3251", "COMACCHIO MC 8 # 3249", "COMACCHIO MC 800 # 0352",
+    "COMACCHIO MC15 P # 3850", "IMT AF 220 Nº 72 # NXK1043", "IMT AF 220 Nº 83 # NXN1176",
+    "IMT AF 250 # 00/365", "IMT AF 280 # NXO1225", "IMT AF220 Nº 76 # NXK1054",
+    "IMT AF220 Nº 79 # NXL1073", "IMT AF220 Nº75 #NXK1052", "IMT AF220 Nº85 #NXP1217",
+    "JUNTTAN PMx24 # 1891", "KLEMM 806-3G # 66808", "KLEMM KR 806-3F # 66433",
+    "LIEBHERR 8100#184907", "LIEBHERR 8100#186081", "LIEBHERR 845 # 183438",
+    "LIEBHERR 855#184462", "LIEBHERR 873 # 185096", "LIEBHERR 873 # 185140",
+    "LIEBHERR HS 845 HD # 183425", "RTG RG 19T # 276", "SANY SCE 1000 #CC0100BK1589"
+  ],
+  "equipos_alquilados_habituales": [
+    "Grúa auxiliar tipo Liebherr 8100",
+    "Grupos electrógenos 800 KVA",
+    "Grupos electrógenos 150 KVA",
+    "Retroexcavadora"
+  ],
+  "materiales_habituales": [
+    "Pilote prefabricado 200x200", "Pilote prefabricado 235x235", "Pilote prefabricado 270x270",
+    "Pilote prefabricado 300x300", "Pilote prefabricado 350x350",
+    "Pilote prefabricado 400x400 - 8Ø16", "Pilote prefabricado 400x400 - 8Ø20",
+    "Pilote prefabricado 400x400 - 8Ø25", "Pilote prefabricado 450x450",
+    "Juntas 200x200", "Juntas 235x235", "Juntas 270x270", "Juntas 300x300", "Juntas 350x350",
+    "Juntas 400x400 - 8Ø16", "Juntas 400x400 - 8Ø20", "Juntas 400x400 - 8Ø25",
+    "Juntas 450x450", "Juntas 400x400 4T",
+    "Azuche TR235", "Azuche TR270", "Azuche TR300", "Azuche TR350", "Azuche TR400"
+  ],
+  "tablas": {
+    "tipo_A": {
+      "descripcion": "El usuario elige elementos. Se borran los no seleccionados, conservando cabecera + fila 1.",
+      "tablas": [
+        "SelectTecnologias", "SelectPersonal", "SelectEquiposPropios",
+        "SelectEquiposAlquilados", "SelectConsumibles", "SelectMaterialesHabituales",
+        "SelectMateriales", "SelectSubcontratos", "SelectOtrosAlquileres", "SelectServicios"
+      ]
+    },
+    "tipo_A_habituales": {
+      "descripcion": "Lista predefinida. El usuario confirma cuáles aplican, se borran los demás (conservando cabecera + fila 1).",
+      "tablas": ["SelectEquiposAlquiladosHabituales"]
+    },
+    "tipo_C": {
+      "descripcion": "Unidad siempre € (total). Solo se pregunta el importe de cada elemento.",
+      "tablas": ["SelectCapex", "SelectTransportes", "SelectImpuestos"]
+    },
+    "tipo_B": {
+      "descripcion": "Estructura fija, no se borran filas. Solo se rellenan los campos amarillos.",
+      "tablas": {
+        "SelectAlquileresHabituales": {
+          "campos_amarillos": ["Coste Unitario", "Unidad de Coste", "Plazo de Pago (días)"],
+          "filas": ["Oficina y vestuarios", "Vehículos"]
+        },
+        "SelectSeguros": {
+          "campos_amarillos": ["% Producción", "Coste Total €"],
+          "filas": [
+            "Seguro de responsabilidad civil y maquinaria",
+            "Seguro de crédito (impago)",
+            "Seguro transporte",
+            "Otros seguros"
+          ]
+        },
+        "SelectOtros": {
+          "campos_amarillos": ["% Producción"],
+          "filas": [
+            { "nombre": "Gastos comerciales",       "defecto": 0.01 },
+            { "nombre": "Seguridad y Calidad",       "defecto": 0.01 },
+            { "nombre": "Imprevistos",               "defecto": null },
+            { "nombre": "Ingeniería",                "calculado": true },
+            { "nombre": "Coste confirming",          "calculado": true }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "titan-plugins",
+  "description": "Plugins de gestión de procesos para Tita",
+  "owner": {
+    "name": "Gerardo Marote",
+    "url": "https://github.com/gmarote"
+  },
+  "plugins": [
+    {
+      "name": "profit",
+      "description": "Herramienta global de presupuestación de proyectos.",
+      "source": "./profit"
+    }
+  ]
+}
