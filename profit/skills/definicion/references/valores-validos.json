@@ -57,43 +57,4 @@
     "Juntas 450x450", "Juntas 400x400 4T",
     "Azuche TR235", "Azuche TR270", "Azuche TR300", "Azuche TR350", "Azuche TR400"
   ],
-  "tablas": {
-    "tipo_A": {
-      "descripcion": "El usuario elige elementos. El usuario selecciona elementos, ningún campo más. Se borran los no seleccionados, conservando cabecera + fila 1 borrando valores.",
-      "tablas": [
-        "SelectTecnologias", "SelectPersonal", "SelectEquiposPropios",
-        "SelectEquiposAlquiladosHabituales", "SelectMaterialesHabituales"        
-      ]
-    },
-    "tipo_B": {
-      "descripcion": "Sin elementos. El usuario indica, para cada elemento; Descripción, Código Tecnología, Coste Unitario y Unidad de Medida.",
-      "tablas": ["SelectEquiposAlquilados", "SelectConsumibles", "SelectMateriales", "SelectSubcontratos", "SelectOtrosAlquileres",
-      "SelectServicios"
-      ]
-    },
-    "tipo_C": {
-      "descripcion": "Sin elementos. El usuario indica, para cada elemento: Descripción, Código Tecnología y Coste Unitario. Unidad de Medida siempre € (total).",
-      "tablas": ["SelectCapex", "SelectTransportes", "SelectImpuestos"]
-    },
-    "tipo_D": {
-      "descripcion": "Estructura fija, no se borran filas. Solo se rellenan los campos_indicados.",
-      "tablas": {        
-        "SelectSeguros": {
-          "campos_indicados": ["% Producción"],
-          "filas": [
-            "Seguro transporte",
-            "Otros seguros"
-          ]
-        },
-        "SelectOtros": {
-          "campos_indicados": ["% Producción"],
-          "filas": [
-            { "nombre": "Gastos comerciales",       "defecto": 0.01 },
-            { "nombre": "Seguridad y Calidad",       "defecto": 0.01 },
-            { "nombre": "Imprevistos",               "defecto": null },
-          ]
-        }
-      }
-    }
-  }
 }
