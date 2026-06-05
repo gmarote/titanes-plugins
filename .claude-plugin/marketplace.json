@@ -3,7 +3,7 @@
   "description": "Plugins de gestión de procesos para Terratest.",
   "owner": {
     "name": "Gerardo Marote",
-    "url": "https://github.com/gmarote"
+    "url": "https://github.com/gmarote/terratest-plugins/"
   },
   "plugins": [
     {
