@@ -1,6 +1,6 @@
 {
-  "name": "titanes-plugins",
-  "description": "Plugins de gestión de procesos para Titan",
+  "name": "terratest-plugins",
+  "description": "Plugins de gestión de procesos para Terratest.",
   "owner": {
     "name": "Gerardo Marote",
     "url": "https://github.com/gmarote"
