@@ -1,9 +1,16 @@
 {
   "name": "profit",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Herramienta de presupuestación de proyectos.",
   "author": {
     "name": "Gerardo Marote"
   },
-  "keywords": ["obra", "cimentaciones", "geotecnica", "presupuesto"]
+  "keywords": ["obra", "cimentaciones", "geotecnica", "presupuesto"],
+  "skills": [
+    {
+      "name": "definicion",
+      "description": "Rellena la sección Definición de la plantilla de importación para Profit, guiando al usuario por todos los bloques de datos del proyecto.",
+      "source": "./skills/definicion/SKILL.md"
+    }
+  ]
 }
